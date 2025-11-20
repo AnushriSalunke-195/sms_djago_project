@@ -46,5 +46,5 @@ def delete_view(request, id):
     s1 = Student.objects.get(roll=id)
     if request.method == 'POST':
         s1.delete()
-        return redirect('display')
+        return redirect('display, HELLO WORLD')
     return render(request, 'studentapp/delete.html', {'data': s1})
