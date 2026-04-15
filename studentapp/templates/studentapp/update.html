@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update page</title>
+</head>
+<body style="background-color:darkcyan;">
+    <div style=" text-align:center;">
+    
+     <h1> Update-Student {{data.name}}</h1><br>
+
+     <form action="/update-student/{{data.roll}}/"method="post">{% csrf_token %}
+        
+        roll :<input type="number" name="r" value="{{data.roll}}" disabled><br><br>
+        name :<input type="text" name="nm" value="{{data.name}}"><br><br>
+        marks :<input type="number" name="mk" value="{{data.marks}}"><br><br>
+        <button type="submit"> update</button><br><br>
+     </form>
+        <hr> <br>
+
+    <a href="/update-student/"> add_student </a><br><br>
+    <a href="/display_all/"> Display all student </a><br><br>  
+</div>
+</body>
+</html>

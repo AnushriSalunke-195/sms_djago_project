@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+    <body style="background-color:rgb(148, 176, 177);">
+    <div style="text-align:center;">
+    <center>
+    <table boarder="10">
+    <h1>WELCOME TO DISPLAY PAGE</h1>
+    {% if data %} <br><br>      
+         <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">roll number</th>
+      <th scope="col">name of student</th>
+      <th scope="col">marks</th>
+      <th scope="col">Axtion</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">{{i.roll}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.marks}}</td>
+      
+      <td>
+        <a class="btn btn-warning" href="/update-student/{{i.roll}}/ "role="button">update</a> &nbsp;<br><br>
+
+        <a class="btn btn-danger" href="#" role="button">Delete</a><br>
+      </td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</center>
+    {%endif%}
+   
+
+    <a class="btn btn-primary" href="/insert-student" role="button">add student</a> &nbsp;<br><br>
+
+    <a class="btn btn-warning" href="/display-all" role="button">Display all students</a><br>
+ </div>   
+</body>
+</html>
